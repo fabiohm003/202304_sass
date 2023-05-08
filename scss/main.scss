@@ -7,6 +7,20 @@ $font-stack: 'IBM Plex Sans', sans-serif;
 $paragraph-size: 1.5em;
 
 
+@mixin flexCenter ($direction, $content, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonStyle () {
+    background: none;
+    border-style: none;
+
+}
+
+
 
 body{
     margin: 0px;
@@ -20,8 +34,7 @@ body{
 nav {
     width: auto;
     padding: 15px;
-    display: flex;
-    justify-content: space-between;
+    @include flexCenter(row, space-between, center);
     color: $primary-text-color;
 
     p {
@@ -34,18 +47,13 @@ nav {
         gap: 15px;
 
         button {
-            background: none;
-            border-style: none;
-
+            @include buttonStyle();
             svg path {
                 stroke: $primary-text-color;
             }
-
         }
 
     }
-
-
 
 }
 
@@ -58,6 +66,7 @@ main {
 
 article {
     width: auto;
+    @include flexCenter(row, space-between, center);
     display: flex;
     justify-content: space-between;
     color: $primary-text-color;
@@ -67,8 +76,7 @@ article {
 
 
     .impact-section{
-        display: flex;
-        flex-direction: column;
+        @include flexCenter(column, initial, flex-start);
         padding-top: 50px;
         gap: 25px;
     }
@@ -83,11 +91,13 @@ article {
         font-size: $paragraph-size;
     }
 
+
+
+    @include buttonStyle();
     button {
         width: 12vw;
         padding: 20px;
         background-color: $quaternary-color;
-        border-style: none;
         border-radius: 35px;
         color:white;
         font-size: 1em;
@@ -124,12 +134,10 @@ section {
         }
 
         .card-section{
-            display: flex;
+            @include flexCenter(row, center, center);
             flex-wrap: wrap;
             width: auto;
             height: auto;
-            justify-content: center;
-            align-items: center;
             column-gap: 60px;
             row-gap: 80px;
 

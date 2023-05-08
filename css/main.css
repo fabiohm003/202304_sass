@@ -9,7 +9,9 @@ nav {
   width: auto;
   padding: 15px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: #7C6A0A;
 }
 nav p {
@@ -35,15 +37,23 @@ main {
 article {
   width: auto;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
   justify-content: space-between;
   color: #7C6A0A;
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 70px;
+  background: none;
+  border-style: none;
 }
 article .impact-section {
   display: flex;
   flex-direction: column;
+  justify-content: initial;
+  align-items: flex-start;
   padding-top: 50px;
   gap: 25px;
 }
@@ -59,7 +69,6 @@ article button {
   width: 12vw;
   padding: 20px;
   background-color: #FA9500;
-  border-style: none;
   border-radius: 35px;
   color: white;
   font-size: 1em;
@@ -87,11 +96,12 @@ section .healthcare h2, section .furniture h2 {
 }
 section .healthcare .card-section, section .furniture .card-section {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   width: auto;
   height: auto;
-  justify-content: center;
-  align-items: center;
   -moz-column-gap: 60px;
        column-gap: 60px;
   row-gap: 80px;
